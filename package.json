@@ -1,0 +1,69 @@
+{
+    "name": "hardhat-project",
+    "version": "1.0.0",
+    "main": "hardhat.config.js",
+    "scripts": {
+        "build": "tsc",
+        "compile": "hardhat compile",
+        "compile:sol": "npx ts-node scripts/ts/compile-sol.ts",
+        "test": "hardhat test",
+        "node": "hardhat node",
+        "exec:ts": "node --loader ts-node/esm --no-warnings",
+        "deploy:local": "hardhat run scripts/ts/deploy.ts --network localhost",
+        "deploy:sepolia": "hardhat run scripts/ts/deploy.ts --network sepolia",
+        "clean": "npx rimraf node_modules package-lock.json dist artifacts cache coverage types",
+        "outdated": "npm outdated",
+        "lint": "npm run lint:js && npm run format:check",
+        "lint:fix": "npm run lint:js:fix && npm run format",
+        "lint:js": "eslint \"**/*.{ts,js}\" --ext .ts,.js",
+        "lint:js:fix": "eslint \"**/*.{ts,js}\" --ext .ts,.js --fix",
+        "format": "prettier --plugin prettier-plugin-solidity --write \"**/*.{js,cjs,ts,sol}\"",
+        "format:check": "prettier --plugin prettier-plugin-solidity --check \"**/*.{js,cjs,ts,sol}\"",
+        "reinstall": "npm run clean && npm install"
+    },
+    "devDependencies": {
+        "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+        "@types/chai": "^4.3.10",
+        "@types/fs-extra": "^11.0.4",
+        "@types/glob": "^8.1.0",
+        "@types/minimatch": "^5.1.2",
+        "@types/node": "^20.19.13",
+        "@typescript-eslint/eslint-plugin": "^7.18.0",
+        "@typescript-eslint/parser": "^7.18.0",
+        "@typescript-eslint/scope-manager": "^7.18.0",
+        "@typescript-eslint/typescript-estree": "^7.18.0",
+        "@typescript-eslint/utils": "^7.18.0",
+        "chai": "^4.3.10",
+        "dotenv": "^16.4.5",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "ethers": "^6.15.0",
+        "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+        "hardhat": "^2.26.3",
+        "minimatch": "^9.0.3",
+        "prettier": "^3.2.5",
+        "prettier-plugin-solidity": "^1.1.3",
+        "solc": "^0.8.8",
+        "ts-node": "^10.9.2",
+        "typescript": "~5.8.3"
+    },
+    "overrides": {
+        "globby": {
+            "@types/glob": "$@types/glob"
+        },
+        "minimatch": {
+            "@types/minimatch": "5.1.2"
+        }
+    },
+    "dependencies": {
+        "crypto-js": "^4.2.0"
+    },
+    "description": "This project showcases a Hardhat 3 Beta project using `mocha` for tests and the `ethers` library for Ethereum interactions.",
+    "directories": {
+        "test": "test"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

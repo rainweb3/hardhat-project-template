@@ -1,0 +1,22 @@
+.idea
+node_modules
+.env
+commonly_used
+.vscode
+
+# Hardhat files
+/cache
+/artifacts
+
+# TypeChain files
+/typechain
+/typechain-types
+
+# solidity-coverage files
+/coverage
+/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+ignition/deployments/chain-31337
+/scripts/contractAddress.txt
+/scripts/ts/json/encryptedKey.json
